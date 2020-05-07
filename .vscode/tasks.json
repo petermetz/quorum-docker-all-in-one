@@ -1,0 +1,22 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Docker - BUILD and TAG: Latest",
+      "type": "shell",
+      "command": "docker build . -t quorum-all-in-one:latest"
+    },
+    {
+      "label": "Docker Compose - BUILD",
+      "type": "shell",
+      "command": "docker-compose build --force-rm"
+    },
+    {
+      "label": "Docker Compose - UP",
+      "type": "shell",
+      "command": "docker-compose up --force-recreate "
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+---
+version: '3.6'
+
+services:
+  quorum-aio:
+    image: "quorum-all-in-one:latest"
+    ports:
+      - 8545:8545/tcp # RPC - HTTP
+      - 8546:8546/tcp # RPC - WebSocket
+      - 8547:8547/tcp # Not sure what this is
+      - 9001:9001/tcp # supervisord - HTTP
+      - 30303:30303/tcp # quorum - not sure what it is for
+      - 30303:30303/udp # quorum - not sure what it is for
+      - 30301:30301/udp # quorum - discovery port
