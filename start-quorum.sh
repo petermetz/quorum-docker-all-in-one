@@ -18,7 +18,7 @@ mkdir -p ${DDIR}/keystore
 mkdir -p ${DDIR}/geth
 cp /nodekey ${DDIR}/geth/nodekey
 cp /key ${DDIR}/keystore/
-cat /permissioned-nodes.json | sed 's/^\(.*\)@.*\?\(.*\)raftport=5040\([0-9]\)\(.*\)$/\1@127.0.0.1\3:21000?discport=0\&raftport=50400\4/g' > ${DDIR}/static-nodes.json
+cat /permissioned-nodes.json | sed 's/^\(.*\)@.*\?\(.*\)raftport=50400\([0-9]\)\(.*\)$/\1@127.0.0.1\3:21000?discport=0\&raftport=50400\4/g' > ${DDIR}/static-nodes.json
 cp ${DDIR}/static-nodes.json ${DDIR}/permissioned-nodes.json
 cat ${DDIR}/static-nodes.json
 GENESIS_FILE="/genesis.json"
