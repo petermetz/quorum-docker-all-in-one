@@ -42,7 +42,6 @@ geth \
   --unlock 0 \
   --mine \
   --miner.threads 1 \
-  --miner.gaslimit 60000000 \
   --miner.gastarget 10 \
   --password /passwords.txt \
   ${QUORUM_GETH_ARGS:-} ${GETH_ARGS_raft}
