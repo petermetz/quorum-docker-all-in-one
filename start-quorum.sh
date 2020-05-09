@@ -40,5 +40,9 @@ geth \
   --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,${QUORUM_CONSENSUS:-raft} \
   --port 21000 \
   --unlock 0 \
+  --mine \
+  --miner.threads 1 \
+  --miner.gaslimit 60000000 \
+  --miner.gastarget 10 \
   --password /passwords.txt \
   ${QUORUM_GETH_ARGS:-} ${GETH_ARGS_raft}
