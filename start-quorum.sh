@@ -30,7 +30,7 @@ geth \
   --datadir ${DDIR} \
   --permissioned \
   --nodiscover \
-  --verbosity 2 \
+  --verbosity ${QUORUM_VERBOSITY:-5} \
   --networkid ${NETWORK_ID} \
   --rpc \
   --rpccorsdomain "*" \
