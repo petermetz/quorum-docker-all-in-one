@@ -1,4 +1,4 @@
-ARG QUORUM_VERSION=2.2.5
+ARG QUORUM_VERSION=2.3.0
 ARG TESSERA_VERSION=0.10.0
 
 FROM quorumengineering/quorum:$QUORUM_VERSION AS quorum
@@ -6,6 +6,17 @@ FROM quorumengineering/tessera:$TESSERA_VERSION AS tessera
 
 COPY --from=quorum /usr/local/bin/geth /usr/local/bin/
 COPY --from=quorum /usr/local/bin/bootnode /usr/local/bin/
+
+# RUN mkdir /config/
+# RUN mkdir /config/orion/
+# RUN mkdir /config/besu/
+# RUN mkdir /opt/besu/public-keys/
+
+# ADD ./log-config.xml /config/log-config.xml
+# ADD ./orion.conf /config/orion/orion.conf
+# ADD ./nodeKey.pub /config/orion/nodeKey.pub
+# ADD ./nodeKey.key /config/orion/nodeKey.key
+# ADD ./bootnode_start.sh /opt/besu/bootnode_start.sh
 
 # BASH
 RUN apk update && apk add --no-cache bash
